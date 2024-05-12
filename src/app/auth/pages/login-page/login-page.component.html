@@ -1,0 +1,28 @@
+<div class="flex flex-column">
+    <span class="text-lg mb-4">Login</span>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input type="text" matInput placeholder="Username" [formControl]="userName">
+        <mat-error>
+            username is required
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Password" [formControl]="password">
+        <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+        <mat-error>
+            Password is required
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-button mat-flat-button color="primary" (click)="login()">
+        <mat-icon>login</mat-icon>
+        Login
+    </button>
+    <div class="flex justify-content-between mt-4">
+            <a type="buttom" routerLink="/auth/forgot-password" class="link">Forgot your password?</a>
+            <a type="buttom" routerLink="/auth/register" class="link">Don't have a account?</a>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+#create-product {
+
+    .form-center {
+        width: 50%;
+    }
+
+    .button-register,
+    mat-form-field {
+        width: 100%;
+    }
+
+}

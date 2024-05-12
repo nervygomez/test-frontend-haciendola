@@ -1,0 +1,91 @@
+<div id="create-product" class="flex flex-column">
+    <span class="text-lg mb-4">{{isEdit ? 'Update product' : 'Create product'}}</span>
+    <div class=" flex justify-content-center">
+        <form [formGroup]="productForm" (ngSubmit)="createOrUpdateProduct()" class="form-center ">
+            <mat-form-field>
+                <mat-label>Handle</mat-label>
+                <input type="text" matInput placeholder="Handle" formControlName="handle">
+                <mat-error
+                    *ngIf="productForm.get('handle')!.invalid && (productForm.get('handle')!.dirty || productForm.get('handle')!.touched)">
+                    Handle is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input type="text" matInput placeholder="Title" formControlName="title">
+                <mat-error
+                    *ngIf="productForm.get('title')!.invalid && (productForm.get('title')!.dirty || productForm.get('title')!.touched)">
+                    Title is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                <mat-error
+                    *ngIf="productForm.get('description')!.invalid && (productForm.get('description')!.dirty || productForm.get('description')!.touched)">
+                    Description is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>SKU</mat-label>
+                <input type="text" matInput placeholder="SKU" formControlName="sku">
+                <mat-error
+                    *ngIf="productForm.get('sku')!.invalid && (productForm.get('sku')!.dirty || productForm.get('sku')!.touched)">
+                    SKU is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Grams</mat-label>
+                <input type="text" matInput placeholder="Grams" formControlName="grams">
+                <mat-error
+                    *ngIf="productForm.get('grams')!.invalid && (productForm.get('grams')!.dirty || productForm.get('grams')!.touched)">
+                    Grams is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Stock</mat-label>
+                <input type="number" matInput placeholder="Stock" formControlName="stock">
+                <mat-error
+                    *ngIf="productForm.get('stock')!.invalid && (productForm.get('stock')!.dirty || productForm.get('stock')!.touched)">
+                    Stock is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Price</mat-label>
+                <input type="number" matInput placeholder="Price" formControlName="price">
+                <mat-error
+                    *ngIf="productForm.get('price')!.invalid && (productForm.get('price')!.dirty || productForm.get('price')!.touched)">
+                    Price is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Compare Price</mat-label>
+                <input type="text" matInput placeholder="Compare Price" formControlName="comparePrice">
+                <mat-error
+                    *ngIf="productForm.get('comparePrice')!.invalid && (productForm.get('comparePrice')!.dirty || productForm.get('comparePrice')!.touched)">
+                    Barcode is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Barcode</mat-label>
+                <input type="text" matInput placeholder="Barcode" formControlName="barcode">
+                <mat-error
+                    *ngIf="productForm.get('barcode')!.invalid && (productForm.get('barcode')!.dirty || productForm.get('barcode')!.touched)">
+                    Barcode is required
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-button mat-flat-button color="primary" type="submit" [disabled]="productForm.invalid"
+                class="button-register">
+                <mat-icon>{{isEdit ? 'edit' : 'add_circle'}}</mat-icon>
+                {{isEdit ? 'Update product' : 'Create product'}}
+            </button>
+        </form>
+    </div>
+</div>
